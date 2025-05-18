@@ -1,15 +1,14 @@
 class AccountChain {
 	constructor() {
-		this.account = null;
-	}	
-
-
+		this._account = null;
+	}
 }
 
 class AccountNode {
 	constructor(account=null, next=null) {
 		this._account = account;
 		this._next = null;
+		this._maxBalance = 10000;
 	}
 
 	get account() {
@@ -20,12 +19,20 @@ class AccountNode {
 		return this._next;
 	}
 
+	get maxBalance() {
+		return this._maxBalance;
+	}
+
 	set account(account) { 
 		this._account = account;
 	}
 
-	set next(account) {
+	set next(account) {	
 		this._next = account;
+	}
+
+	set maxBalance(maxBalance) {
+		this._maxBalance = maxBalance;
 	}
 
 }
